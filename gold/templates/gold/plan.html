@@ -8,18 +8,65 @@
     <body id="background">
 
         <h1 class="heading">Software Development Plan</h1>
+
         <div class="container">
             <h2>Requirements Specification</h2>
+            <p>
+                This project will allow users to enter a weight in multiple units, and give the dollar amount of that weight in gold. 
+                This assignment consists of 2 parts: a unit conversion API, and a vanilla JS SPA for the user to interact with.
+            </p>
+
+            <h3>Unit Conversion API</h3>
+            <p>
+                This API should respond to requests to the <code>/unitconv/convert</code> path. 
+                Each request should have 3 parameters:
+            </p>
+            <ul>
+                <li><code>from</code>, a string identifying the unit to convert from</li>
+                <li><code>value</code>, a floating-point number representing the quantity of the units to convert from</li>
+                <li>and <code>to</code>, a string identifying the unit to convert to</li>
+            </ul>
+            <p>
+                The result should be a JSON object with two properties:
+            </p>
+            <ul>
+                <li><code>units</code>, a string identifying the units of <code>value</code> (this should match the <code>to</code> parameters of the request)</li>
+                <li><code>value</code>, a floating-point number representing the quantity of the units</li>
+            </ul>
+            <p>
+                When an invalid query is given at the path, a JSON object should be returned with an error message in the <code>error</code> property.
+            </p>
+            <p>
+                This app should use a Django model as a table of conversion factors. 
+                A data migration should be used to initialize the table with conversion factors.
+                This is the only place in the program where conversion factors can be hard-coded.
+            </p>
+            <p>
+                The following units should be supported, both to be converted to and from, with the string representing it:
+            </p>
+            <ul>
+                <li>U.S. Ton <code>T</code></li>
+                <li>Gram <code>g</code></li>
+                <li>Troy Ounce <code>t_oz</code></li>
+                <li>Kilogram <code>kg</code></li>
+                <li>Imperial Pound <code>lb</code></li>
+                <li>Ounce <code>oz</code></li>
+            </ul>
+
+            <h3>Weight in Gold SPA</h3>
             
             <h3>Things I know</h3>
             <ul>
-                
+                <li>Algorithm for unit conversion</li>
+                <li>How to check query parameters</li>
+                <li>How to use django models</li>
             </ul>
             <h3>Things I don't know</h3>
             <ul>
-                
+                <li>How to send a JSON response from django (there's a JsonReponse object in django.http)</li>
             </ul>
         </div>
+
         <div class="container">
             <h2>System Analysis</h2>
             <h3>Input:</h3>
