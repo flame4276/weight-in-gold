@@ -140,12 +140,61 @@
             <h2>Design</h2>
             <h3>API Flow:</h3>
             <ul>
-                
+                <li>Check if request sent required parameters. If not, send an error reponse</li>
+                <li>Check if value is a number. If not, send an error</li>
+                <li>Check if units are in the conversion table. If not, send an error</li>
+                <li>Convert units</li>
+                <li>Send reponse</li>
             </ul>
+
+            <h3>Models</h3>
+<pre><code>Unit:
+    abbreviation: charfield(length=10)
+    amount_per_kg: float
+</code></pre>
+
+            <h3>Initial data</h3>
+<pre><code>
+    abbreviation: 'kg'
+    amount_per_kg: 1
+
+    abbreviation: 'T'
+    amount_per_kg: 0.00110231
+
+    abbreviation: 'g'
+    amount_per_kg: 1000
+
+    abbreviation: 't_oz'
+    amount_per_kg: 32.1507
+
+    abbreviation: 'lb'
+    amount_per_kg: 2.20462
+
+    abbreviation: 'oz'
+    amount_per_kg: 35.274
+</code></pre>
+
+<pre><code>convert(request):
+    """
+    View function that validates input, converts, and sends output
+    """
+    Try to get parameters from request
+        If there is a KeyError thrown, return an error JsonReponse
+    Try to convert value to a float
+        If there is a ValueError, return an error JsonReponse
+    Try to get amount_per_kg of 'to' from the Units table
+        If there is a Model.DoesNotExist thrown, return an error JsonReponse
+    Try to get amount_per_kg of 'from' from the Units table
+        If there is a Model.DoesNotExist thrown, return an error JsonReponse
+
+    Perform conversion
+
+    Send JsonReponse with result
+</code></pre>
 
             <h3>SPA Flow:</h3>
             <ul>
-                
+
             </ul>
         </div>
         <div class="container">
