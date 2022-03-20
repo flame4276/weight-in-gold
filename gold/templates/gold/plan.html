@@ -54,16 +54,55 @@
             </ul>
 
             <h3>Weight in Gold SPA</h3>
+            <p>The website should have the following HTML features:</p>
+            <ul>
+                <li>An <code>&lt;h2&gt;</code> and <code>&lt;title&gt;</code> naming the page</li>
+                <li>Instructions on how to use the app</li>
+                <li>An <code>&lt;input&gt;</code> of type <code>number</code> where the user can enter their weight</li>
+                <li>A <code>&lt;select&gt;</code> element where the user can choose a unit of weight from a dropdown menu</li>
+                <li>A <code>&lt;button&gt;</code> that will perform the conversion when it's clicked</li>
+                <li>
+                    A <code>&lt;p&gt;</code> element which displays the latest market price of gold.
+                    <ul>
+                        <li>Before the price of gold is retrieved, this should display the message <code>Please Wait</code></li>
+                        <li>After the price of gold is retrieved, it should be displayed</li>
+                        <li>If the price of gold cannot be retrieved, an informative error message should be displayed</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                The page should only make a request to the Nasdaq Data Link on loading.
+                The price of gold per troy ounce should be obtained from the LBMA data set.
+                Only the most recent prices should be requested.
+            </p>
+            <p>After the button is clicked:</p>
+            <ul>
+                <li>Validate the input. If it's invalid, inform the user</li>
+                <li>Make a request to the <code>unitconv</code> app to convert the weight to troy ounces</li>
+                <li>Calculate the price of that weight in gold</li>
+                <li>
+                    Create a new <code>&lt;div&gt;</code> with the following properties:
+                    <ul>
+                        <li>The dollar amount of the weight</li>
+                        <li>A timestamp</li>
+                        <li>It's displayed above older requests</li>
+                        <li>Clicking it removes it from the DOM</li>
+                        <li>If an error occurs, display a timestamped error message within it</li>
+                    </ul>
+                </li>
+            </ul>
             
             <h3>Things I know</h3>
             <ul>
                 <li>Algorithm for unit conversion</li>
                 <li>How to check query parameters</li>
                 <li>How to use django models</li>
+                <li>How to create a webpage</li>
             </ul>
             <h3>Things I don't know</h3>
             <ul>
                 <li>How to send a JSON response from django (there's a JsonReponse object in django.http)</li>
+                <li>The structure of the data from Nasdaq</li>
             </ul>
         </div>
 
