@@ -6,6 +6,13 @@ from django.db import migrations
 def populate_db(apps, schema_editor):
     Unit = apps.get_model('unitconv', 'Unit')
 
+    Unit(abbreviation='kg', amount_per_kg=1).save()
+    Unit(abbreviation='T', amount_per_kg=0.00110231).save()
+    Unit(abbreviation='g', amount_per_kg=1000).save()
+    Unit(abbreviation='t_oz', amount_per_kg=32.1507).save()
+    Unit(abbreviation='lb', amount_per_kg=2.20462).save()
+    Unit(abbreviation='oz', amount_per_kg=35.274).save()
+
 class Migration(migrations.Migration):
 
     dependencies = [
