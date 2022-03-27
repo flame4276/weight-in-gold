@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Weight in Gold</title>
+        <link rel="stylesheet" href="{% static 'gold/style.css' %}" />
+    </head>
+    <body>
+        <div id="infobar">
+            <h1 id="title" class="infobar-item">Weight in Gold</h1>
+
+            <div class="infobar-item">
+                <input type="number" id="weight" class="text-item" />
+                <select id="unit" class="text-item">
+                    <option value="T">tons</option>
+                    <option value="g">grams</option>
+                    <option value="t_oz">troy ounces</option>
+                    <option value="kg">kilograms</option>
+                    <option value="lb">pounds</option>
+                    <option value="oz">ounces</option>
+                </select>
+            </div>
+
+            <div class="infobar-item">
+                <button id="calculate" class="text-item">Calculate</button>
+            </div>
+
+            <p id="gold-info" class="infobar-item text-item">The current price of gold is ____</p>
+        </div>
+    </body>
+</html>
