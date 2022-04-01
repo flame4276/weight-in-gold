@@ -200,9 +200,28 @@
     Send JsonReponse with result
 </code></pre>
 
-            <h3>SPA Flow:</h3>
+            <h3>SPA</h3>
+            <h4>When the webpage is loaded</h4>
             <ul>
+                <li>Calculate button should already be disabled</li>
+                <li>Make a request to nasdaq</li>
+                <li>When the request comes back, display the price of gold, store is as a global, and enable the calculate button. If the request doesn't come back, display an error message</li>
+            </ul>
+            When the calculate button is pressed
+            <ul>
+                <li>Check that the price of gold is there, if not display an error</li>
+                <li>Get the weight and unit</li>
+                <li>Validate the weight and unit, if invalid display an error</li>
+                <li>Make a request to the unitconv API</li>
+                <li>When the request comes back, display the conversion info. If it doesn't come back, display an error</li>
+            </ul>
 
+            <h4>Functions:</h4>
+            <ul>
+                <li>One to request data from nasdaq</li>
+                <li>One to calculate the weight</li>
+                <li>One to get an error container</li>
+                <li>One to get a container for the weight conversion info</li>
             </ul>
         </div>
         <div class="container">
