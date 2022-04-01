@@ -8,8 +8,8 @@ body {
     flex-direction: column;
     align-items: center;
     
-    color: white;
-    background-color: black;
+    color: #979947;
+    background-color: #0a285c;
 
     padding: 50px 10px 50px 10px;
 }
@@ -26,6 +26,30 @@ body {
     font-size: 72px;
 }
 
+#weight {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#unit {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 #calculate {
-    padding: 5px;
+    padding: 15px 30px;
+}
+
+#gold-info {
+    font-size: 28px
+}
+
+.weight-info {
+    background-color: #0a285c;
+    color: #979947;
+    margin: 10px 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
