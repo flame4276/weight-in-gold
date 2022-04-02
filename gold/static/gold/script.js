@@ -53,7 +53,7 @@ let calculate = async (event) => {
 
     try {
         let response = await (await fetch(`${window.origin}/unitconv/convert?from=${unit}&to=t_oz&value=${weight}`)).json();
-        div = createDiv(`The value of your weight in gold is ${response.value*goldPrice}`);
+        div = createDiv(`The value of your weight in gold is $${response.value*goldPrice}`);
         insertDiv(div);
     } catch {
         let div = createDiv('Error: Weight could not be converted. Please check your internet connection and try again.');
